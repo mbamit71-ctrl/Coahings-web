@@ -1,0 +1,3 @@
+ye enquiry subs ko thik karo 
+form and login page mein api
+gallery ko optimize karo aur ki acche se loading ho 
