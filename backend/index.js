@@ -81,7 +81,7 @@ app.get("/users", async (req,res)=>{
   }
 })
 // Route to check password
-app.post("/api/admin/check", (req, res) => {
+app.post("/check", (req, res) => {
   const { password } = req.body;
   if (password === process.env.ADMIN_PASS) {
     return res.json({ ok: true });

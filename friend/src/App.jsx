@@ -1,38 +1,46 @@
-import React from 'react'
-import Header from './components/header.jsx'
-import Toppage from './components/toppage.jsx'
-import Resultsbanner from './components/resultsbanner.jsx'
-import Resultspdf from './components/resultspdf.jsx'
-import Courese from './components/courses.jsx'
-import VideoSection from './components/VideoSection.jsx'
-import AboutUs from './components/aboutus.jsx'
-import Gallery from './components/Gallery.jsx'
-import MapSection from './components/MapSection.jsx'
-import ContactSection from './components/ContactSection.jsx'
-import Subscribe from './components/subscribe.jsx'
-import Footer from './components/footer.jsx'
-import Form from './components/form.jsx'
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+// Components
+// ensure these match the actual filenames in /src/components (case-sensitive)
+import TopPage from "./components/toppage";
+import Footer from "./components/footer";
+
+// Pages
+import HomePage from "./pages/HomePage.jsx";
+import ResultsPage from "./pages/ResultsPage.jsx";
+import CoursesPage from "./pages/CoursesPage.jsx";
+import AdminLogin from "./pages/adminLogin.jsx";
+import AdminDashboard from "./pages/adminDashboard.jsx";
 
 const App = () => {
+  // added: auth state lifted to App
+  const [isAuth, setIsAuth] = useState(false);
+
   return (
-    <div>
-      <Header />
-                    <Resultsbanner />
-                    {/* <Toppage /> */}
-                    <Resultspdf />
-                    <Courese />
-                    <VideoSection youtubeUrl="https://youtu.be/leeX4Vs1Yhs?si=F5GxQhYXfVwWP3jN" /> 
-                    <AboutUs />
-                    <Form />
-                    <Gallery />
-                    <Subscribe />
-                    <MapSection />
-                    <ContactSection />
-                    <Footer />
+    <BrowserRouter>
+      {/* Navbar fixed on top */}
+      <TopPage />
 
-    </div>
-  )
-}
+      {/* Page Routes */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/results" element={<ResultsPage />} />
+        <Route path="/courses" element={<CoursesPage />} />
 
-export default App
+        {/* pass setter to login so it can mark user as authenticated */}
+        <Route path="/admin" element={<AdminLogin setIsAuth={setIsAuth} />} />
 
+        {/* protected dashboard route */}
+        <Route
+          path="/admin/dashboard"
+          element={isAuth ? <AdminDashboard /> : <Navigate to="/admin" replace />}
+        />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
+  );
+};
+
+export default App;

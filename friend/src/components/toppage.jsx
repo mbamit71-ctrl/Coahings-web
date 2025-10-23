@@ -13,22 +13,24 @@ const TopPage = () => {
   ];
 
   return (
-    <div className="bg-white w-full flex items-center justify-between p-4 relative shadow-md">
-      {/* Left side */}
-      <div className="flex items-center">
-        <img
-          src="https://plus.unsplash.com/premium_photo-1721829332372-460bb55f37f4?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.1.0"
-          alt="Top banner"
-          className="w-24 h-24 object-cover rounded-lg"
-        />
-        
-      </div>
+    <>
+      {/* Sticky Navbar */}
+      <div className="fixed top-0 left-0 w-full bg-white flex items-center justify-between p-4 shadow-md z-50">
+        {/* Left side: Logo/Image */}
+        <div className="flex items-center">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1721829332372-460bb55f37f4?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.1.0"
+            alt="Top banner"
+            className="w-24 h-24 object-cover rounded-lg"
+          />
+        </div>
 
-      {/* Hamburger Menu */}
-      <Menu
-        className="w-8 h-8 text-blue-600 cursor-pointer"
-        onClick={toggleMenu}
-      />
+        {/* Hamburger Menu */}
+        <Menu
+          className="w-8 h-8 text-blue-600 cursor-pointer"
+          onClick={toggleMenu}
+        />
+      </div>
 
       {/* Full screen drawer */}
       <div
@@ -60,7 +62,10 @@ const TopPage = () => {
           );
         })}
       </div>
-    </div>
+
+      {/* Spacer div to prevent content hiding behind fixed navbar */}
+      <div className="h-28"></div>
+    </>
   );
 };
 
