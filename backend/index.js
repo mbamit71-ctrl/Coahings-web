@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import User from "./models/user.model.js";
 import cors from "cors";
 import Email from "./models/email.model.js"
+import path from "path";
+
 
 
 dotenv.config();
@@ -11,9 +13,12 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'https://automatic-train-jjwpvrwg55j4fjr5w-5175.app.github.dev',
+  origin: 'https://automatic-train-jjwpvrwg55j4fjr5w-5173.app.github.dev',
   credentials: true
 }))
+
+
+
 // 🔹 DB connection function
 const connectDB = async () => {
   try {
@@ -89,6 +94,7 @@ app.post("/check", (req, res) => {
     return res.status(401).json({ ok: false, message: "Wrong password" });
   }
 });
+
 
 
 app.listen(process.env.PORT || 5000, () => {
