@@ -3,6 +3,7 @@ import React from "react";
 const VideoSection = ({ youtubeUrl }) => {
   let videoId = "";
 
+  // Parse video ID only if normal URL
   if (youtubeUrl.includes("watch?v=")) {
     videoId = youtubeUrl.split("v=")[1].split("&")[0];
   } else if (youtubeUrl.includes("youtu.be/")) {
@@ -11,7 +12,13 @@ const VideoSection = ({ youtubeUrl }) => {
     videoId = youtubeUrl.split("shorts/")[1].split("?")[0];
   }
 
-  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  // Final embed URL
+  const embedUrl = youtubeUrl.includes("embed/")
+    ? youtubeUrl // already embed link
+    : videoId
+    ? `https://www.youtube.com/embed/${videoId}` // parsed ID
+    : "https://www.youtube.com/embed/dQw4w9WgXcQ"; // fallback video
+
   const channelUrl =
     "https://youtube.com/@mantracareerinstitute4581?si=nQZPOlPDdUwitbMT";
 
@@ -27,7 +34,7 @@ const VideoSection = ({ youtubeUrl }) => {
           <iframe
             className="w-full aspect-video rounded-md shadow-md"
             src={embedUrl}
-            title="YouTube video"
+            title="Promotional video by INSTITUTE NAME"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>

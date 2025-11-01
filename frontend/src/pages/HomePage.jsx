@@ -16,7 +16,10 @@ const HomePage = () => {
       <Resultsbanner />
       <Resultspdf />
       <Courese />
-      <VideoSection youtubeUrl="https://youtu.be/leeX4Vs1Yhs?si=F5GxQhYXfVwWP3jN" />
+
+      
+      <VideoSection youtubeUrl="https://youtu.be/leeX4Vs1Yhs" />
+
       <AboutUs />
       <Form />
       <Gallery />

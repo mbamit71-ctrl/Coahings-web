@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import User from "./models/user.model.js";
 import cors from "cors";
 import Email from "./models/email.model.js"
-import path from "path";
+
 
 
 
