@@ -12,7 +12,7 @@ const Subscribe = () => {
     setLoading(true);
     try {
       await axios.post(
-        `https://automatic-train-jjwpvrwg55j4fjr5w-3000.app.github.dev/create-sub`,
+        `https://upgraded-bassoon-r4v5q7vwj954hxv69-3000.app.github.dev/create-sub`,
         { email }
       );
       setSubscribed(true);

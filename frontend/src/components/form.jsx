@@ -11,10 +11,10 @@ const Form = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://automatic-train-jjwpvrwg55j4fjr5w-3000.app.github.dev/create-user",
+        "https://upgraded-bassoon-r4v5q7vwj954hxv69-3000.app.github.dev/create-user",
         { name, email, mobile, district }
       );
-      alert("User Created Successfully ✅");
+      alert("Enquiry is summited we will contact u soon ! ✅");
       console.log(res.data);
       setName("");
       setEmail("");

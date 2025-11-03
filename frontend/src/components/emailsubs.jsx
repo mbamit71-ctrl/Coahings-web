@@ -6,7 +6,7 @@ const EmailSubscription = () => {
   const [error, setError] = useState(null);
   const [visibleCount, setVisibleCount] = useState(10);
 
-  const API_URL = "https://automatic-train-jjwpvrwg55j4fjr5w-3000.app.github.dev/email-subs";
+  const API_URL = "https://upgraded-bassoon-r4v5q7vwj954hxv69-3000.app.github.dev/email-subs";
 
   useEffect(() => {
     async function fetchEmails() {

@@ -45,7 +45,7 @@ export default function AdminLogin(props) {
     async function checkAuth() {
       try {
         const res = await fetch(
-          "https://automatic-train-jjwpvrwg55j4fjr5w-3000.app.github.dev/check",
+          "https://upgraded-bassoon-r4v5q7vwj954hxv69-3000.app.github.dev/check",
           { method: "GET", credentials: "include" }
         );
         const data = await parseResponse(res);
@@ -76,7 +76,7 @@ export default function AdminLogin(props) {
 
     try {
       const res = await fetch(
-        "https://automatic-train-jjwpvrwg55j4fjr5w-3000.app.github.dev/check",
+        "https://upgraded-bassoon-r4v5q7vwj954hxv69-3000.app.github.dev/check",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

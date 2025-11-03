@@ -13,7 +13,7 @@ const EnquirySubs = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get(`https://automatic-train-jjwpvrwg55j4fjr5w-3000.app.github.dev/users`);
+        const res = await axios.get(`https://upgraded-bassoon-r4v5q7vwj954hxv69-3000.app.github.dev/users`);
         // 🔹 Dummy API ke liye array format me convert kar rahe
         const data = Array.isArray(res.data) ? res.data : [res.data];
         setUsers(data);

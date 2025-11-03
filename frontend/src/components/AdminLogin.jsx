@@ -10,7 +10,7 @@ export default function AdminLogin({ setIsAuth }) {
     e.preventDefault();
     setErr("");
 
-    const res = await fetch("https://automatic-train-jjwpvrwg55j4fjr5w-3000.app.github.dev", {
+    const res = await fetch("https://upgraded-bassoon-r4v5q7vwj954hxv69-3000.app.github.dev", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password })
